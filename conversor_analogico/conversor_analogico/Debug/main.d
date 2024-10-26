@@ -15,7 +15,8 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- .././bit_a_bit.h .././serial.h .././tx_rx.h .././string_transmit.h
+ .././bit_a_bit.h .././serial.h .././tx_rx.h .././string_transmit.h \
+ .././welcome_message.h .././conversor.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -56,3 +57,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 .././tx_rx.h:
 
 .././string_transmit.h:
+
+.././welcome_message.h:
+
+.././conversor.h:

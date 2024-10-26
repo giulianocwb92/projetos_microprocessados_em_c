@@ -6,19 +6,31 @@
 #include "serial.h"
 #include "tx_rx.h"
 #include "string_transmit.h"
+#include "welcome_message.h"
+#include "conversor.h"
 
 int main(void)
 {
 	config_57600_8_n_1();
 	config_ADCSRA();
-    char mensagem[40] = "Selecione uma opcao:\n";
-	char opcao_1[40]  = "1 - Medir temperatura (LM35)\n";
-	char opcao_2[40]  = "2 - Medir tensão (Potenciômetro)\n";
     while (1){
-		string_transmit(mensagem);
-		string_transmit(opcao_1);
-		string_transmit(opcao_2);
+		welcome_message();
 		char opcao = rx();
+		switch(opcao){
+			case '1':
+				set_conversor_A0();
+				unsigned int reading_A0 = converte_adc();
+				string_transmit("opcao 1\n");
+				break;
+			case '2':
+				set_conversor_A1();
+				unsigned int reading_A1 = converte_adc();
+				string_transmit("opcao 2\n");
+				break;
+			default:
+				string_transmit("opcao invalida\n");
+				break;	
+		}
     }
 }
 
