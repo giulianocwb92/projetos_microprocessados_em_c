@@ -6,6 +6,3 @@ void config_57600_8_n_1(){
 	UCSR0A = 0x22;
 }
 
-void config_ADCSRA(){
-	ADCSRA = 0x87;
-}

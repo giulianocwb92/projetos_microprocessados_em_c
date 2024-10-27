@@ -9,7 +9,7 @@ void config_adc(){
 
 unsigned int converte_adc(){
 	//ADMUX = 0x44; referência 5V
-	ADMUX = 0xC4;
+	ADMUX = 0x41;
 	_delay_us(10);
 	setbit(ADCSRA, 6);
 	while(getbit(ADCSRA, 6)==1){}
