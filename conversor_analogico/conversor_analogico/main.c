@@ -21,20 +21,23 @@ int main(void)
 			case '1':
 				set_conversor_A0();
 				unsigned int reading_A0 = converte_adc();
-				//string_transmit("opcao 1\n");
+				double tensao_a0 = calculo_tensao(reading_A0, 1.1);
+				double temperatura = tensao_a0/0.01;
+				char temperatura_str[10];
+				dtostrf(temperatura, 6, 2, temperatura_str);
+				string_transmit("Temperatura: ");
+				string_transmit(temperatura_str);
+				string_transmit(" graus.");
 				break;
 			case '2':
 				set_conversor_A1();
 				unsigned int reading_A1 = converte_adc();
-				float tensao = calculo_tensao(reading_A1);
-				string_transmit("Tensão: ");
+				double tensao = calculo_tensao(reading_A1, 5.0);
 				char tensao_str[10];
 				dtostrf(tensao, 6, 2, tensao_str);
+				string_transmit("Tensão: ");
 				string_transmit(tensao_str);
-				tx(' ');
-				tx('V');
-				tx('\n');
-				//string_transmit("opcao 2\n");
+				string_transmit( " V\n");
 				break;
 			default:
 				string_transmit("opcao invalida\n");

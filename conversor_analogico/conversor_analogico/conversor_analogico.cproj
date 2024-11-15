@@ -133,6 +133,9 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="conversor.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="conversor.h">
       <SubType>compile</SubType>
     </Compile>
@@ -143,6 +146,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="string_transmit.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="string_transmit.h">
